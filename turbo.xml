@@ -234,16 +234,6 @@
 </section>
                       ]]>
             </turbo:content>
-            <yandex:related type="infinity">
-                <link
-                        url="http://www.example.com/other-page.html"
-                        img="http://www.example.com/image.jpg">Текст ссылки
-                </link>
-                <link
-                        url="http://www.example.com/other-page2.html"
-                        img="http://www.example.com/image2.jpg">Текст ссылки
-                </link>
-            </yandex:related>
         </item>
     </channel>
 </rss>
