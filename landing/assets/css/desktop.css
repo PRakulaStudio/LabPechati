@@ -1,0 +1,570 @@
+:root {
+    --root-padding: 50px;
+    --header-height: 100px;
+}
+
+html, body {
+    font-size: 20px;
+}
+
+header {
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: -1;
+    padding: 0 var(--root-horizontal-padding);
+}
+
+header .open-menu,
+header .close-menu,
+header .title,
+header .vk-link,
+header .whats-app-link {
+    display: none;
+}
+
+header .phone-call-link {
+    color: white;
+    width: unset;
+    height: unset;
+    background-size: 20px;
+    padding-left: 30px;
+}
+
+header .menu-section {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: unset;
+    padding: unset;
+    margin: unset;
+    z-index: unset;
+    height: unset;
+    width: unset;
+}
+
+header .menu-section a {
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    margin-right: 40px;
+}
+
+main {
+    /*margin-top: calc(var(--header-height) * -1);*/
+}
+
+main:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*bottom: 0;*/
+    margin-top: 0;
+    height: 150vh;
+    will-change: transform;
+    background: linear-gradient(transparent, white, white);
+}
+
+main:before {
+    margin-top: 150vh;
+}
+
+main > section,
+section#intro {
+    /*margin-left: var(--root-horizontal-padding) !important;*/
+    /*margin-right: var(--root-horizontal-padding) !important;*/
+    /*width: calc(100% - (var(--root-horizontal-padding) * 2)) !important;*/
+    --padding: calc((100vw - 1024px - (var(--root-horizontal-padding) * 2)) / 2);
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+}
+
+.capture-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.capture-section .show-mobile-form {
+    display: none;
+}
+
+section#intro {
+    margin-top: calc(var(--header-height) * -1);
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+section#intro > .title {
+    font-size: 60px;
+    font-weight: normal;
+    max-width: 65%;
+    margin-top: 10vh;
+}
+
+section#intro > .advantages {
+    max-width: 65%;
+    margin-top: 10vh;
+    /*margin-bottom: 200px;*/
+}
+
+section#intro > .advantages > .title {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+section#intro > .advantages > ul > li {
+    font-size: 24px;
+    line-height: normal;
+    margin-top: 20px;
+}
+
+section#intro .capture-section {
+    position: absolute;
+    width: 350px;
+    height: 300px;
+    top: unset;
+    right: calc((50% - 350px) / 2);
+    left: unset;
+    bottom: 30%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 0 25px 0;
+}
+
+section#production {
+    width: calc(100% - (var(--root-horizontal-padding) * 2));
+    margin-left: var(--root-horizontal-padding);
+    background-color: white;
+}
+
+section#production:before {
+    content: unset;
+}
+
+section#production > .title {
+    position: static;
+    font-size: 38px;
+    background: unset;
+    margin: unset;
+    height: auto;
+    width: auto;
+    line-height: normal;
+    padding: unset;
+}
+
+section#production .products-section {
+    margin: unset;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+section#production .products-section .product {
+    display: flex !important;
+    background: unset;
+    padding: unset;
+    width: calc(100% / 4); /*calc(100% - (var(--root-horizontal-padding) * 3) / 4);*/
+    height: auto;
+    box-shadow: unset;
+    border-radius: unset;
+    overflow: unset;
+    margin: unset;
+    margin-top: 50px;
+    justify-content: flex-end;
+}
+
+section#production .products-section .product > img {
+    height: 200px;
+    margin-bottom: 20px;
+    /*max-height: 250px;*/
+}
+
+section#production .products-section .product .title {
+    font-size: 20px;
+    margin: auto;
+    max-width: 80%;
+}
+
+section#production .products-section .product .product-order-button {
+    all: inherit;
+    display: inline-block;
+    text-align: center;
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    align-self: center;
+    background: white;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.21);
+    margin-top: 20px;
+}
+
+section#production .show-more-products {
+    display: none;
+}
+
+section#interactive,
+section#offer,
+section#how-to,
+section#reasons,
+section#clients,
+section#why-choice,
+section#certificates {
+    max-width: 100%;
+    margin: unset;
+    text-align: left;
+}
+
+section#interactive > .title,
+section#how-to > .title,
+section#reasons #discounts > .title,
+section#reasons #reasons-to-order > .title,
+section#clients > .title,
+section#why-choice > .title,
+section#certificates > .title,
+section#reviews > .title,
+section#delivery .title,
+section#contacts .contacts-section > .title {
+    font-size: 38px;
+}
+
+section#interactive .mobile-caption {
+    display: none;
+}
+
+section#interactive .interactive-section {
+    display: block;
+    background-color: #ebebeb;
+    width: 1024px;
+    max-width: 100%;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+section#how-to .how-to-section {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+section#how-to .how-to-section > li {
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+
+section#how-to .how-to-section > li:after {
+    content: unset !important;
+}
+
+section#how-to .how-to-section > li > img {
+    --size: calc(100vw / 6);
+}
+
+section#how-to .how-to-section > li > h3 {
+    font-size: 28px;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+section#offer {
+    width: 900px;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section#offer .offer-section {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    font-size: 26px;
+}
+
+section#offer .offer-section > .title {
+    font-size: 32px;
+    margin-bottom: unset;
+}
+
+section#offer .partners-section {
+    width: 100%;
+}
+
+section#offer .partners-section > button {
+    display: none;
+}
+
+section#offer .partners-section .scroll-section {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+section#offer .partners-section .scroll-section > img {
+    width: 30%;
+    height: 100px;
+    object-fit: contain;
+}
+
+section#offer .capture-form {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: auto;
+}
+
+section#offer .capture-form > .title {
+    font-size: 28px;
+    margin-top: unset;
+}
+
+section#offer .show-mobile-form {
+    display: none;
+}
+
+section#reasons {
+    display: flex;
+    justify-content: space-between;
+}
+
+section#reasons > * {
+    width: calc((100% - var(--root-horizontal-padding)) / 2);
+}
+
+section#reasons #discounts {
+    /*font-size: 24px;*/
+}
+
+section#reasons #discounts .discounts-section {
+    padding: 30px;
+    max-width: 500px;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+section#reasons #discounts .discounts-section > .title {
+    font-size: 28px;
+}
+
+section#reasons #discounts .discounts-section > .timer {
+    font-size: 42px;
+}
+
+section#reasons #discounts .discounts-section > .button {
+    width: 100%;
+    margin: unset;
+    margin-top: 40px;
+    border-radius: 20px;
+}
+
+section#reasons #reasons-to-order .reasons-list {
+    margin-left: unset;
+}
+
+section#reasons #reasons-to-order .reasons-list li {
+    margin-bottom: 40px;
+}
+
+section#reasons #reasons-to-order .reasons-list li summary {
+    cursor: pointer;
+}
+
+section#offer .partners-section {
+    width: 100%;
+}
+
+section#clients .clients-section {
+    margin-top: 100px;
+}
+
+section#clients .clients-section > button {
+    display: none;
+}
+
+section#clients .clients-section .scroll-section {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+section#clients .clients-section .scroll-section > img {
+    width: 20%;
+    height: 200px;
+    object-fit: contain;
+}
+
+section#why-choice .reasons-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section#why-choice .reasons-list .reason {
+    flex-direction: row;
+}
+
+section#why-choice .reasons-list .reason > img {
+    --size: 150px;
+    width: var(--size);
+    min-width: var(--size);
+    height: var(--size);
+    min-height: var(--size);
+    margin-right: 100px;
+}
+
+section#why-choice .reasons-list .reason .description {
+    text-align: left;
+    align-items: flex-start;
+}
+
+section#certificates {
+
+}
+
+section#certificates .certificates-section {
+    --size: 350px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+section#certificates .certificates-section > button {
+    display: none;
+}
+
+section#certificates .certificates-section .scroll-section {
+    width: 100%;
+}
+
+section#certificates .certificates-section .scroll-section > img {
+    width: 100%;
+    height: 350px;
+}
+
+section#reviews {
+    max-width: 100%;
+    margin: unset;
+    clear: both;
+}
+
+section#reviews .reviews-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+section#reviews .reviews-section .review {
+    width: calc((50% - var(--root-horizontal-padding)));
+    align-self: flex-start;
+    margin: unset;
+}
+
+section#reviews .reviews-section .review:nth-child(even) {
+    align-self: flex-end;
+}
+
+section#reviews .reviews-section .review .reviewer-section > img {
+    --size: 100px;
+}
+
+section#reviews .reviews-section .review .reviewer-section .about-reviewer .name {
+    font-size: 28px;
+}
+
+section#reviews .reviews-section .review .reviewer-section .about-reviewer .activity {
+    font-size: 22px;
+}
+
+section#reviews .reviews-section .review .review-message {
+    margin-left: 130px;
+    margin-top: unset;
+    padding: 20px;
+}
+
+section#reviews .reviews-section .review:nth-child(even) .review-message {
+    margin-left: unset;
+    margin-right: 130px !important;
+}
+
+section#delivery {
+}
+
+section#delivery .delivery-section {
+    width: 100%;
+    margin-left: unset;
+    margin-right: unset;
+}
+
+section#delivery .delivery-section .delivery-variant {
+    padding: 30px;
+    width: 300px;
+}
+
+section#delivery > .caption {
+    font-size: 28px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+section#contacts {
+    display: flex;
+    flex-direction: row;
+}
+
+section#contacts .contacts-section {
+    width: 40%;
+    padding-top: unset;
+    /*padding-bottom: unset;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: flex-start;*/
+    height: auto;
+}
+
+section#contacts .contacts-section .button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    align-self: center;
+    min-width: 300px;
+}
+
+section#contacts .map-section {
+    width: 60%;
+    height: auto;
+    max-height: unset;
+    min-height: 600px;
+}
+
+@media (min-width: 1200px) {
+    header .phone-call-link {
+        font-size: 20px;
+        background-position: left center;
+    }
+
+    section#production .products-section .product .product-order-button {
+        padding: 0 20px;
+        width: auto;
+
+    }
+}
+
