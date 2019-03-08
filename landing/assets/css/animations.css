@@ -1,0 +1,11 @@
+@keyframes intro-scroll-indicator {
+    from {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
