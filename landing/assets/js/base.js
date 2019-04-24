@@ -1,6 +1,28 @@
 document.addEventListener('scroll', debounce(scrolledIntroHandler, 1));
 window.addEventListener('popstate', scrolledIntroHandler);
 
+document.querySelectorAll('.timer').forEach(timer => {
+    const defaultTime = {
+        hours: 1,
+        minutes: 23,
+        seconds: 45
+    };
+
+    timer.loadTimeFromStorage = () => (timer.timeFromStorage = localStorage.getItem('timer')) ? timer.time = new Date(timer.timeFromStorage) : null;
+    timer.checkTime = () => timer.time && timer.time.getTime() > new Date(null, null, null, null, null, null, null).getTime();
+    timer.reset = () => timer.time = new Date(null, null, null, defaultTime.hours, defaultTime.minutes, defaultTime.seconds);
+    timer.render = () => timer.innerText = `${timer.time.getHours()} : ${timer.time.getMinutes()} : ${timer.time.getSeconds()}`;
+    timer.stop = () => clearInterval(timer.interval);
+    timer.start = () => timer.interval = setInterval(() => {
+        if (timer.checkTime()) timer.time.setSeconds(timer.time.getSeconds() - 1); else timer.reset();
+        timer.render();
+        localStorage.setItem('timer', timer.time);
+    }, 1000);
+
+    timer.loadTimeFromStorage();
+    timer.start();
+});
+
 function scrolledIntroHandler() {
     const headerHeight = parseInt(getComputedStyle(document.body).getPropertyValue('--header-height'));
     const currentScrollOffset = window.innerHeight - document.scrollingElement.scrollTop;
