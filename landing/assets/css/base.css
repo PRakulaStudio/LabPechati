@@ -689,7 +689,7 @@ section#offer .scroll-section {
     scroll-snap-type: x mandatory;
 }
 
-section#offer .partners-section .scroll-section > img {
+section#offer .partners-section .scroll-section > a {
     width: 100%;
     scroll-snap-align: center;
     /*margin: 0 10px;*/
@@ -898,6 +898,13 @@ section#certificates .scroll-section {
     margin: unset;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
+}
+
+section#certificates .certificates-section .scroll-section > a {
+    /*display: inline-block;*/
+    width: 100%;
+    object-fit: contain;
+    scroll-snap-align: center;
 }
 
 section#certificates .certificates-section .scroll-section > img {

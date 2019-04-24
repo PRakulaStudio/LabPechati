@@ -448,6 +448,10 @@ section#certificates .certificates-section .scroll-section {
     width: 100%;
 }
 
+section#certificates .certificates-section .scroll-section > a {
+
+}
+
 section#certificates .certificates-section .scroll-section > img {
     width: 100%;
     height: 350px;

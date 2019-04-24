@@ -10,6 +10,7 @@
     <link href="assets/css/base.css" rel="stylesheet">
     <link href="assets/css/desktop.css" media="(min-width: 1024px)" rel="stylesheet">
     <link href="assets/css/animations.css" rel="stylesheet">
+    <link href="assets/css/lightbox.css" rel="stylesheet">
 </head>
 <body id="menu">
 <header>
@@ -317,9 +318,25 @@
                 ⟨
             </button>
             <div class="scroll-section">
-                <img src="/images/sertificats/1pr.jpg">
-                <img src="/images/sertificats/2pr.jpg">
-                <img src="/images/sertificats/3pr.jpg">
+                <a href="#certificate-1"><img alt="" class="thumbnail" src="/images/sertificats/1pr.jpg"></a><a
+                    class="lightbox" href="#certificates" id="certificate-1"><img
+                    alt="" src="/images/sertificats/originals/1.jpg"></a><a href="#certificate-2"><img
+                    alt="" class="thumbnail" src="/images/sertificats/2pr.jpg"></a><a class="lightbox"
+                                                                                      href="#certificates"
+                                                                                      id="certificate-2"><img
+                    alt="" src="/images/sertificats/originals/2.jpg"></a><a href="#certificate-4"><img
+                    alt="" class="thumbnail" src="/images/sertificats/4pr.jpg"></a><a class="lightbox"
+                                                                                      href="#certificates"
+                                                                                      id="certificate-4"><img
+                    alt="" src="/images/sertificats/originals/4.jpg"></a><a href="#certificate-5"><img
+                    alt="" class="thumbnail" src="/images/sertificats/5pr.jpg"></a><a class="lightbox"
+                                                                                      href="#certificates"
+                                                                                      id="certificate-5"><img
+                    alt="" src="/images/sertificats/originals/5.jpg"></a><a href="#certificate-6"><img
+                    alt="" class="thumbnail" src="/images/sertificats/6pr.jpg"></a><a class="lightbox"
+                                                                                      href="#certificates"
+                                                                                      id="certificate-6"><img
+                    alt="" src="/images/sertificats/originals/6.jpg"></a>
             </div>
             <button class="scroll-next"
                     onclick="this.parentNode.querySelector('.scroll-section').scrollBy({left:this.parentNode.querySelector('.scroll-section').firstElementChild.clientWidth,behavior:'smooth'})">
