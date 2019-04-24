@@ -10,8 +10,34 @@ try {
 } catch (e) {
 }
 
-document.addEventListener('scroll', debounce(scrolledIntroHandler, 1), supportsPassive ? {passive: true} : false);
-window.addEventListener('popstate', scrolledIntroHandler);
+document.addEventListener('scroll', debounce(scrollHandler, 1), supportsPassive ? {passive: true} : false);
+window.addEventListener('popstate', scrollHandler);
+document.addEventListener("DOMContentLoaded", () => {
+    prepareLoadOnVisible();
+    scrollHandler();
+});
+
+if (window.matchMedia("(min-width: 1024px)").matches)
+    document.querySelectorAll('iframe[desktop-only').forEach(iframe => iframe.src = iframe.dataset.src || null);
+
+function scrollHandler() {
+    scrolledIntroHandler();
+    checkVisible();
+}
+
+function checkVisible() {
+    window.loadOnVisibleNodes.forEach(node => {
+        if (node.getBoundingClientRect().top - window.innerHeight < 0) {
+            node.src = node.dataset.src;
+            if (window.loadOnVisibleNodes.indexOf(node) !== -1)
+                window.loadOnVisibleNodes.splice(window.loadOnVisibleNodes.indexOf(node), 1);
+        }
+    })
+}
+
+function prepareLoadOnVisible() {
+    window.loadOnVisibleNodes = Array.from(document.querySelectorAll('iframe[data-load-on-visible]'));
+}
 
 function scrolledIntroHandler() {
     const headerHeight = parseInt(getComputedStyle(document.body).getPropertyValue('--header-height'));

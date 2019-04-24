@@ -53,7 +53,7 @@
             <input name="value2" placeholder="Ваш телефон" type="tel">
             <button type="submit">Отправить заявку</button>
         </form>
-        <a class="button show-mobile-form" href="#">Оформить заказ</a>
+        <a class="button show-mobile-form" href="#order-from">Оформить заказ</a>
     </div>
 </section>
 <main>
@@ -100,9 +100,9 @@
         </div>
         <div class="interactive-section">
             <iframe align="left" border="0"
-                    height="100%" marginheight="0" marginwidth="0" name="i-fr-ds" scrolling="none"
-                    src="https://mystampready.com/cs.php?ru&inu=70996db83e7af5c464fff401598f55de"
-                    width="100%"></iframe>
+                    data-desktop-only data-src="https://mystampready.com/cs.php?ru&inu=70996db83e7af5c464fff401598f55de"
+                    frameborder="0" height="100%" marginheight="0" marginwidth="0"
+                    name="i-fr-ds" scrolling="none" width="100%"></iframe>
         </div>
     </section>
     <section id="how-to">
@@ -154,7 +154,7 @@
             <input name="value2" placeholder="Ваш телефон" type="tel">
             <button type="submit">Узнать подробности</button>
         </form>
-        <a class="button show-mobile-form" href="#">Узнать подробности</a>
+        <a class="button show-mobile-form" href="#order-from">Узнать подробности</a>
     </section>
     <section id="reasons">
         <div id="discounts">
@@ -472,10 +472,9 @@
             </div>
         </div>
         <div class="map-section">
-            <iframe frameborder="0"
-                    height="100%"
-                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A311ace8843745c5ae9caf88452d6a8235c4ca473a5cefd3027517ecd48bea64a&amp;source=constructor"
-                    width="100%"></iframe>
+            <iframe data-load-on-visible
+                    data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A311ace8843745c5ae9caf88452d6a8235c4ca473a5cefd3027517ecd48bea64a&amp;source=constructor"
+                    frameborder="0" height="100%" width="100%"></iframe>
         </div>
     </section>
 </main>
@@ -484,8 +483,8 @@
         #order-from {
             position: fixed;
             z-index: 100000;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             top: 0;
             left: 0;
             display: flex;
@@ -554,6 +553,13 @@
             background: #a5a5a5;
             border-radius: 50%;
             cursor: pointer;
+        }
+
+        @media (max-width: 1023px) {
+            #order-from form {
+                width: calc(100vw - (var(--root-horizontal-padding) * 6));
+                max-width: calc(100vw - (var(--root-horizontal-padding) * 6));
+            }
         }
     </style>
     <form action="https://maker.ifttt.com/trigger/LabPechatiOrder/with/key/e90iC92t-8snoggxBuwYnhL3KqPGnfaNUtJDlE8nuA"
