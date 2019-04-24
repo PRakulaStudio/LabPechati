@@ -589,6 +589,10 @@ section#interactive > .mobile-caption:before {
     text-align: center;
 }
 
+section#interactive .interactive-section {
+    display: none;
+}
+
 section#how-to {
     margin-top: unset;
 }
