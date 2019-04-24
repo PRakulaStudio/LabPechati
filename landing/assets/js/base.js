@@ -13,12 +13,11 @@ try {
 document.addEventListener('scroll', debounce(scrollHandler, 1), supportsPassive ? {passive: true} : false);
 window.addEventListener('popstate', scrollHandler);
 document.addEventListener("DOMContentLoaded", () => {
+    if (window.matchMedia("(min-width: 1024px)").matches)
+        document.querySelectorAll('iframe[data-desktop-only]').forEach(iframe => iframe.src = iframe.dataset.src || null);
     prepareLoadOnVisible();
     scrollHandler();
 });
-
-if (window.matchMedia("(min-width: 1024px)").matches)
-    document.querySelectorAll('iframe[desktop-only').forEach(iframe => iframe.src = iframe.dataset.src || null);
 
 function scrollHandler() {
     scrolledIntroHandler();
